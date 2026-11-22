@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Mart — Everything You Want</title>
+  <link rel="icon" type="image/png" href="logo.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="#" class="brand-logo" aria-label="Mini Mart Home">
+        <img src="logo.jpg" alt="Mini Mart Logo" class="nav-logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#best-sellers">Products</a>
+        <a href="#" id="openCartLink">Cart</a>
+        <a href="#" id="openFavLink">Favorites</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <select id="sortSelect" class="sort-select" title="Sort by Price">
+        <option value="default">Sort: Featured</option>
+        <option value="low-to-high">Price: Low to High</option>
+        <option value="high-to-low">Price: High to Low</option>
+      </select>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <button class="icon-btn" id="favToggleBtn" title="Favorites">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge-count" id="favCount">0</span>
+      </button>
+
+      <button class="icon-btn" id="cartToggleBtn" title="Shopping Cart">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span class="badge-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Everything You<br />Want</h1>
+      <p>Explore Now</p>
+      <a href="#best-sellers" class="btn-outline">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Shop by Category -->
+  <section class="container section">
+    <div class="section-header">
+      <h2 class="section-title">Shop by Category</h2>
+      <button id="resetFilterBtn" class="reset-btn hidden">Show All</button>
+    </div>
+    <div class="category-grid" id="categoryGrid">
+      <div class="category-card" data-category="Electronics">
+        <i class="fa-solid fa-laptop-code"></i>
+        <span>Electronics</span>
+      </div>
+      <div class="category-card" data-category="Fashion">
+        <i class="fa-solid fa-shirt"></i>
+        <span>Fashion</span>
+      </div>
+      <div class="category-card" data-category="Home & Kitchen">
+        <i class="fa-solid fa-blender"></i>
+        <span>Home & Kitchen</span>
+      </div>
+      <div class="category-card" data-category="Beauty">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span>Beauty</span>
+      </div>
+      <div class="category-card" data-category="Sports">
+        <i class="fa-solid fa-basketball"></i>
+        <span>Sports</span>
+      </div>
+      <div class="category-card" data-category="Groceries">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span>Groceries</span>
+      </div>
+      <div class="category-card" data-category="Automotive">
+        <i class="fa-solid fa-car-side"></i>
+        <span>Automotive</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Seller Products -->
+  <section class="container section" id="best-sellers">
+    <h2 class="section-title" id="productsHeading">Best Seller</h2>
+    <div class="product-grid" id="productGrid"></div>
+
+    <div class="view-more-wrap">
+      <button class="btn-dark" id="viewMoreBtn">View More</button>
+    </div>
+  </section>
+
+  <!-- Slide-out Cart Drawer -->
+  <aside class="drawer hidden" id="cartDrawer">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button class="close-btn" id="closeCartBtn">&times;</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-footer">
+      <div class="total-row">
+        <span>Total:</span>
+        <strong>$<span id="cartTotal">0.00</span></strong>
+      </div>
+      <button class="btn-dark full-width" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Slide-out Favorites Drawer -->
+  <aside class="drawer hidden" id="favDrawer">
+    <div class="drawer-header">
+      <h3>Your Favorites</h3>
+      <button class="close-btn" id="closeFavBtn">&times;</button>
+    </div>
+    <div class="drawer-body" id="favItems"></div>
+  </aside>
+
+  <!-- Dark Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#" class="footer-logo-link" aria-label="Mini Mart Home">
+          <img src="logo.jpg" alt="Mini Mart Logo" class="footer-logo" />
+        </a>
+        <p>Mini Mart E-Commerce Website</p>
+        <p>123 Market Street, Tech Hub Aurangabad Bihar <br />Pin 824143</p>
+        <p>info@minimart.com</p>
+        <p>+91 9155938119</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#best-sellers" onclick="filterByCategory('Electronics')">Electronics</a></li>
+          <li><a href="#best-sellers" onclick="filterByCategory('Home & Kitchen')">Home & Kitchen</a></li>
+          <li><a href="#best-sellers" onclick="filterByCategory('Sports')">Sports</a></li>
+          <li><a href="#best-sellers" onclick="filterByCategory('Groceries')">Groceries</a></li>
+          <li><a href="#best-sellers" onclick="filterByCategory('Beauty')">Beauty</a></li>
+          <li><a href="#best-sellers" onclick="filterByCategory('Fashion')">Fashion</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Track Orders</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Cancellation</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Mini Mart E-Commerce Website— Pintu Kumar NITW. All Rights Reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms &amp; Conditions</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
