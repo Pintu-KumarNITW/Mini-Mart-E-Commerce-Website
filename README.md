@@ -83,11 +83,26 @@ Then open `index.html` in any browser, or use the **Live Server** extension in V
 - [ ] Backend and database (Node.js and MongoDB)
 - [ ] Product reviews and filters by price range and rating
 
-## Author
+## 📸 Screenshots
+
+### Homepage
+![Mini Mart Homepage](front%20page.png)
+
+### Product Filtering
+![Product Filtering](after%20selecting%20only%20electronics.png)
+
+### Shopping Cart
+![Shopping Cart](your%20cart.png)
+
+### Favorites / Wishlist
+![Favorites](Your%20Favorites.png)
+
+## 👨‍💻 Author
 
 **Pintu Kumar**
-B.Tech, Electrical and Electronics Engineering, National Institute of Technology, Warangal (2023-2027)
 
+B.Tech, Electrical and Electronics Engineering  
+National Institute of Technology, Warangal
 GitHub: [@Pintu-KumarNITW](https://github.com/Pintu-KumarNITW)
 
 ---
