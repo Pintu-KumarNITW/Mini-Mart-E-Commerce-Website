@@ -23,16 +23,6 @@ Mini Mart is a front-end e-commerce platform that mimics the core shopping exper
 
 I built this project to understand how an online storefront works end to end: how a catalogue is organised, how customers browse and decide, and how a cart and checkout flow is structured.
 
-## Screenshots
-
-| Home | Products |
-| --- | --- |
-| ![Home](screenshots/home.png) | ![Products](screenshots/products.png) |
-
-| Cart | Mobile View |
-| --- | --- |
-| ![Cart](screenshots/cart.png) | ![Mobile](screenshots/mobile.png) |
-
 ## Key Features
 
 | Feature | What it does |
@@ -73,7 +63,6 @@ Mini-Mart-E-Commerce-Website/
 ├── app.js            # Cart, favorites, search, sort and filter logic
 ├── products.js       # Product catalogue data
 ├── logo.jpg          # Brand logo
-├── screenshots/      # Images used in this README
 └── README.md
 ```
 
