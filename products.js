@@ -353,7 +353,7 @@ const PRODUCTS = [
     bestSeller: false,
     image: "https://cdn.dummyjson.com/products/images/womens-dresses/Corset%20With%20Black%20Skirt/thumbnail.png"
   },
-  {
+    {
     id: 33,
     name: "Classic Men's Polo Shirt",
     category: "Fashion",
@@ -365,17 +365,6 @@ const PRODUCTS = [
     image: "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/thumbnail.png"
   },
   {
-    id: 33,
-    name: "Classic Men's Polo Shirt",
-    category: "Fashion",
-    price: 24.99,
-    oldPrice: 29.99,
-    discount: "-16.67%",
-    rating: 4.5,
-    bestSeller: false,
-    image: "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/thumbnail.png"
-  },
-{
     id: 34,
     name: "Short Sleeve Casual Shirt",
     category: "Fashion",
